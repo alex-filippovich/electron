@@ -93,11 +93,11 @@ describe('BrowserView module', function () {
   describe('BrowserView.webContents.getOwnerBrowserWindow()', function () {
     it('points to owning window', function () {
       view = new BrowserView()
-      assert.ok(!view.webContents.getOwnerBrowserWindow())
+      assert.equal(view.webContents.getOwnerBrowserWindow(), undefined)
       w.setBrowserView(view)
       assert.equal(view.webContents.getOwnerBrowserWindow(), w)
       w.setBrowserView(null)
-      assert.ok(!view.webContents.getOwnerBrowserWindow())
+      assert.equal(view.webContents.getOwnerBrowserWindow(), undefined)
     })
   })
 })
